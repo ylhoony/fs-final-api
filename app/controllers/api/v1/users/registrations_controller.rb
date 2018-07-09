@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -19,7 +19,7 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
       if resource.active_for_authentication?
         sign_up(resource_name, resource) # Update User sign_up records
         # Add line for JWT Token Authorization
-        user = { id: resource.id, email: resource.email }
+        user = { id: resource.id, email: resource.email, first_name: resource.first_name, last_name: resource.last_name }
         token = JwtAuth.encode_token({ user: user })
         render json: { token: token, user: user }, status: 201
       else
@@ -60,17 +60,15 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  # def devise_parameter_sanitizer
+  def devise_parameter_sanitizer
     # Use Custom Parameter Sanitizer set up in 'app/lib/devise/user' for resource correction.
-    # Devise::UserParameterSanitizer.new(User, :user, params)
-  # end
-
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    # Use Custom Parameter Sanitizer set up in 'app/lib/devise/user' for resource correction.
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
     Devise::UserParameterSanitizer.new(User, :user, params)
   end
+
+  # If you have extra params to permit, append them to the sanitizer.
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
