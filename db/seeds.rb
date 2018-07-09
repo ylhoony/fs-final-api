@@ -8,6 +8,11 @@
 
 
 users = User.create([ { email: "no1@no.co", password: "nonono", password_confirmation: "nonono", first_name: "Brian", last_name: "Dolly"  },
-                      { email: "no2@no.co", password: "nonono", password_confirmation: "nonono", first_name: "Lauren", last_name: "Jane" }
+                      { email: "no2@no.co", password: "nonono", password_confirmation: "nonono", first_name: "Lauren", last_name: "Jane" },
                       { email: "no3@no.co", password: "nonono", password_confirmation: "nonono", first_name: "Paul", last_name: "Trump" } ])
 
+
+countries = Country.create([{ name: "Canada", alpha2: "CA"  ,alpha3: "CAN" , numeric: "124" , active: true },
+                            { name: "Untied States", alpha2: "US"  ,alpha3: "USA" , numeric: "840" , active: true },
+                            { name: "South Korea", alpha2: "KR"  ,alpha3: "KOR" , numeric: "410" , active: true },
+                            { name: "Wonderland", alpha2: "WL"  ,alpha3: "WDL" , numeric: "999" , active: false } ])
