@@ -3,8 +3,9 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
     create_table :employees do |t|
       t.integer :user_id
       t.integer :company_id
+      t.boolean :subscriber
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

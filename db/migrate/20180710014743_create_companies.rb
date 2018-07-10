@@ -5,10 +5,10 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :dba
       t.string :street1
       t.string :street2
-      t.string :city
+      t.string :city, null: false
       t.string :state
       t.integer :country_id
-      t.string :postal_code
+      t.string :postal_code, null: false
       t.integer :currency_id # default currency
 
       t.timestamps null: false
