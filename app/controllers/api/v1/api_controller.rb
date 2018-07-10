@@ -12,7 +12,11 @@ class Api::V1::ApiController < ApplicationController
     JwtAuth.decode_token(auth_token)
   end
 
-  def current_user_id
+  def current_user
+    User.find(authenticate_token[0]["user"]["id"])
+  end
+
+  def auth_current_user
     decoded = authenticate_token
     if decoded.present?
       render json: decoded[0], status: 200
