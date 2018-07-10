@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_07_10_010527) do
 
   create_table "currencies", force: :cascade do |t|
     t.string "name", null: false
-    t.string "alpha3", null: false
+    t.string "alpha", null: false
     t.string "numeric", null: false
     t.boolean "active", default: false
     t.datetime "created_at", null: false
