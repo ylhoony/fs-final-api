@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :admin do
         resources :countries, only: [:index, :create, :show, :update]
+        resources :currencies, only: [:index, :create, :show, :update]
       end
 
       resources :countries, only: [:index, :show]
+      resources :currencies, only: [:index, :show]
 
       devise_scope :user do
         get "current_user", to: "api#current_user" # Current User
