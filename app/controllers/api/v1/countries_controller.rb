@@ -1,4 +1,4 @@
-class Api::V1::CountriesController < ApplicationController
+class Api::V1::CountriesController < Api::V1::ApiController
   before_action :set_country, only: [:show, :update]
 
   def index
