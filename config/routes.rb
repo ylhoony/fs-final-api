@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-
-      scope module: "admin" do
-        resources :countries, only: [:index, :create, :show, :update, :destroy]
+      namespace :admin do
+        resources :countries, only: [:index, :create, :show, :update]
       end
+
+      resources :countries, only: [:index, :show]
 
       devise_scope :user do
         get "current_user", to: "api#current_user" # Current User
