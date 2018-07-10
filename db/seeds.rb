@@ -17,7 +17,7 @@ countries = Country.create([{ name: "Canada", alpha2: "CA", alpha3: "CAN", numer
                             { name: "South Korea", alpha2: "KR", alpha3: "KOR", numeric: "410", active: true },
                             { name: "Wonderland", alpha2: "WL", alpha3: "WDL", numeric: "999", active: false } ])
 
-currencies = Currency.create([{ name: "Canadian Dollar", alpha3: "CAD", numeric: "124", active: true },
-                              { name: "US Dollar", alpha3: "USD", numeric: "840", active: true },
-                              { name: "South Korean Won", alpha3: "KRW", numeric: "410", active: true },
-                              { name: "Wonderland Wonder", alpha3: "WDR", numeric: "999", active: false } ])
+currencies = Currency.create([{ name: "Canadian Dollar", alpha: "CAD", numeric: "124", active: true },
+                              { name: "US Dollar", alpha: "USD", numeric: "840", active: true },
+                              { name: "South Korean Won", alpha: "KRW", numeric: "410", active: true },
+                              { name: "Wonderland Wonder", alpha: "WDR", numeric: "999", active: false } ])
