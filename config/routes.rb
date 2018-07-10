@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :employees, only: [:index, :create, :show, :update, :destory]
 
       devise_scope :user do
-        get "current_user", to: "api#current_user_id" # Current User
+        get "current_user", to: "api#auth_current_user" # Current User
         post "sign_up", to: "users/registrations#create" # User Sign Up
         post "sign_in", to: "users/sessions#create" # User Sign In
         # delete "sign_out", to: "users/sessions#destroy" # User Sign Out
