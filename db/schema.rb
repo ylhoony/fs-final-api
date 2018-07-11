@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2018_07_10_015434) do
     t.string "dba"
     t.string "street1"
     t.string "street2"
-    t.string "city"
+    t.string "city", null: false
     t.string "state"
     t.integer "country_id"
-    t.string "postal_code"
+    t.string "postal_code", null: false
     t.integer "currency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_07_10_015434) do
   create_table "employees", force: :cascade do |t|
     t.integer "user_id"
     t.integer "company_id"
-    t.boolean "subscriber"
+    t.boolean "subscriber", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
