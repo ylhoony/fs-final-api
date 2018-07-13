@@ -1,5 +1,5 @@
 class Api::V1::ApiController < ApplicationController
-  before_action :require_sign_in, except: [:current_user]
+  before_action :require_sign_in, except: [:auth_current_user]
 
   def require_sign_in
     authenticate_token || render_unauthorized("Access Denied")
