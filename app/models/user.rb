@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :employees
-  has_many :companies, through: :employees
+  has_many :accounts, through: :employees
 end
