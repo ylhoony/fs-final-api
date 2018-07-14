@@ -1,4 +1,4 @@
-class Company < ApplicationRecord
+class Account < ApplicationRecord
   belongs_to :country
   belongs_to :currency
   has_many :employees
