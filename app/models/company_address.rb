@@ -1,2 +1,0 @@
-class CompanyAddress < ApplicationRecord
-end
