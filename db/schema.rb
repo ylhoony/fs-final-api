@@ -29,24 +29,6 @@ ActiveRecord::Schema.define(version: 2018_07_13_235807) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "company_addresses", force: :cascade do |t|
-    t.integer "company_id", null: false
-    t.string "name", null: false
-    t.string "contact"
-    t.string "street1"
-    t.string "street2"
-    t.string "city"
-    t.string "state"
-    t.integer "country_id", null: false
-    t.string "postal_code"
-    t.string "phone"
-    t.string "email"
-    t.string "fax"
-    t.boolean "active", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "countries", force: :cascade do |t|
     t.string "name", null: false
     t.string "alpha2", null: false
@@ -68,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_235807) do
 
   create_table "employees", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "company_id"
+    t.integer "account_id"
     t.boolean "subscriber", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
