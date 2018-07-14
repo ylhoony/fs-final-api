@@ -1,4 +1,4 @@
-class CompanySerializer < ActiveModel::Serializer
+class AccountSerializer < ActiveModel::Serializer
   belongs_to :country
   belongs_to :currency
 
