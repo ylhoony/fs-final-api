@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
       resources :countries, only: [:index, :show]
       resources :currencies, only: [:index, :show]
-      resources :companies, only: [:index, :create, :show, :update, :destory]
+      resources :accounts, only: [:index, :create, :show, :update, :destory]
       resources :employees, only: [:index, :create, :show, :update, :destory]
 
       devise_scope :user do
