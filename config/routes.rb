@@ -10,11 +10,6 @@ Rails.application.routes.draw do
         resources :currencies, only: [:index, :create, :show, :update]
       end
 
-      resources :countries, only: [:index, :show]
-      resources :currencies, only: [:index, :show]
-      resources :accounts, only: [:index, :create, :show, :update, :destory]
-      resources :employees, only: [:index, :create, :show, :update, :destory]
-
       devise_scope :user do
         get "current_user", to: "api#auth_current_user" # Current User
         post "sign_up", to: "users/registrations#create" # User Sign Up
@@ -30,6 +25,13 @@ Rails.application.routes.draw do
         put "users/password", to: "users/passwords#update"
       end
 
+      get '/current_account', to: "api#current_account"
+      put '/current_account', to: "api#update_current_account"
+
+      resources :countries, only: [:index, :show]
+      resources :currencies, only: [:index, :show]
+      resources :accounts, only: [:index, :create, :show, :update, :destory]
+      resources :employees, only: [:index, :create, :show, :update, :destory]
     end
   end
 
