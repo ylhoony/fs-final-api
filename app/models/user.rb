@@ -7,12 +7,12 @@ class User < ApplicationRecord
   has_many :employees
   has_many :accounts, through: :employees
 
-  def current_account=(account)
-    self.current_account_id = account.id
+  def current_account
+    self.accounts.find_by(id: self.current_account_id)
   end
 
-  def current_account
-    Account.find(self.current_account_id)
+  def current_account=(account)
+    update(current_account_id: account.id)
   end
 
 end
