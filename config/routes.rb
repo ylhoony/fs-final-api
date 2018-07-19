@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       namespace :admin do
         resources :countries, only: [:index, :create, :show, :update]
         resources :currencies, only: [:index, :create, :show, :update]
+        resources :payment_options, only: [:index, :create, :show, :update]
       end
 
       devise_scope :user do
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
       resources :currencies, only: [:index, :show]
       resources :accounts, only: [:index, :create, :show, :update, :destory]
       resources :employees, only: [:index, :create, :show, :update, :destory]
+      resources :payment_options, only: [:index]
     end
   end
 
