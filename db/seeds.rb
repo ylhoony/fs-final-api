@@ -21,3 +21,10 @@ currencies = Currency.create([{ name: "Canadian Dollar", alpha: "CAD", numeric: 
                               { name: "US Dollar", alpha: "USD", numeric: "840", active: true },
                               { name: "South Korean Won", alpha: "KRW", numeric: "410", active: true },
                               { name: "Wonderland Wonder", alpha: "WDR", numeric: "999", active: false } ])
+
+payment_options = PaymentOption.create([{ name: "day(s) after invoice date", active: true },
+                                        { name: "of the month following invoice date", active: true },
+                                        { name: "end of month", active: true },
+                                        { name: "of the current month", active: true },
+                                        { name: "day(s) after the end of the invoice month", active: true } ])
+
