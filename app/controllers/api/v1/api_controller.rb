@@ -19,10 +19,19 @@ class Api::V1::ApiController < ApplicationController
   def auth_current_user
     decoded = authenticate_token
     if decoded.present?
-      render json: decoded[0], status: 200
+      render json: decoded[0]["user"], status: 200
     else
       render_unauthorized("Access Denied")
     end
+  end
+
+  def current_account
+    render json: current_user.current_account, status: 200
+  end
+
+  def update_current_account
+    current_user.current_account = Account.find(params[:account_id])
+    return current_account
   end
 
   protected
