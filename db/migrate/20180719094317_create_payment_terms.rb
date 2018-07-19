@@ -5,11 +5,11 @@ class CreatePaymentTerms < ActiveRecord::Migration[5.2]
       t.integer :payment_option_id
       t.string :name, null: false
       t.integer :days, default: 0
-      t.float :trade_credit_rate
+      t.decimal :trade_credit_rate
       t.integer :trade_credit_days
       t.boolean :active, default: true
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end
