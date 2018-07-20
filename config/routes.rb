@@ -26,7 +26,7 @@ Rails.application.routes.draw do
         put "users/password", to: "users/passwords#update"
       end
 
-      get '/current_account', to: "api#current_account"
+      get '/current_account', to: "api#get_current_account"
       put '/current_account', to: "api#update_current_account"
 
       resources :countries, only: [:index, :show]
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :accounts, only: [:index, :create, :show, :update, :destory]
       resources :employees, only: [:index, :create, :show, :update, :destory]
       resources :payment_options, only: [:index]
+      resources :payment_terms, only: [:index, :create, :update, :destory]
     end
   end
 
