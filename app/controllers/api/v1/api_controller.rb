@@ -26,12 +26,16 @@ class Api::V1::ApiController < ApplicationController
   end
 
   def current_account
-    render json: current_user.current_account, status: 200
+    current_user.current_account
+  end
+
+  def get_current_account
+    render json: current_account, status: 200
   end
 
   def update_current_account
     current_user.current_account = Account.find(params[:account_id])
-    return current_account
+    return get_current_account
   end
 
   protected
