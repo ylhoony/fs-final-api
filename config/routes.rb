@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       resources :accounts, only: [:index, :create, :show, :update, :destory]
       resources :employees, only: [:index, :create, :show, :update, :destory]
       resources :payment_options, only: [:index]
-      resources :payment_terms, only: [:index, :create, :update, :destory]
+      resources :payment_terms, only: [:index, :create, :show, :update, :destory]
     end
   end
 
