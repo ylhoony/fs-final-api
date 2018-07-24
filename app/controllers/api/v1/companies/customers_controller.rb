@@ -3,7 +3,6 @@ class Api::V1::Companies::CustomersController < Api::V1::ApiController
   def index
     binding.pry
     
-
   end
 
   def create
