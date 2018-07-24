@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       resources :employees, only: [:index, :create, :show, :update, :destroy]
       resources :payment_options, only: [:index]
       resources :payment_terms, only: [:index, :create, :show, :update, :destroy]
-
+      resources :warehouses, only: [:index, :create, :show, :update, :destroy]
 
       resources :customers, controller: 'companies/customers', only: [:index, :create, :show, :update, :destroy]
       resources :suppliers, controller: 'companies/suppliers', only: [:index, :create, :show, :update, :destroy]
