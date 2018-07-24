@@ -1,7 +1,17 @@
 class Api::V1::WarehousesController < Api::V1::ApiController
+  before_action :set_account
 
   def index
-    
+    if @account.present?
+      warehouses = @account.warehouses
+      if warehouses.present?
+        render json: warehouses, status: 200
+      else
+        render json: { warehouses: [] }, status: 200
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def create
