@@ -31,10 +31,13 @@ Rails.application.routes.draw do
 
       resources :countries, only: [:index, :show]
       resources :currencies, only: [:index, :show]
-      resources :accounts, only: [:index, :create, :show, :update, :destory]
-      resources :employees, only: [:index, :create, :show, :update, :destory]
+      resources :accounts, only: [:index, :create, :show, :update, :destroy]
+      resources :employees, only: [:index, :create, :show, :update, :destroy]
       resources :payment_options, only: [:index]
-      resources :payment_terms, only: [:index, :create, :show, :update, :destory]
+      resources :payment_terms, only: [:index, :create, :show, :update, :destroy]
+
+      resources :customers, only: [:index, :create, :show, :update, :destroy]
+      resources :suppliers, only: [:index, :create, :show, :update, :destroy]
     end
   end
 
