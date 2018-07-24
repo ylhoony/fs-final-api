@@ -12,7 +12,6 @@ class Api::V1::PaymentTermsController < Api::V1::ApiController
     else
       render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
     end
-
   end
 
   def create
