@@ -45,6 +45,10 @@ class Api::V1::PaymentTermsController < Api::V1::ApiController
     
   end
 
+  def destroy
+
+  end
+
   protected
 
   def set_payment_term
@@ -61,10 +65,6 @@ class Api::V1::PaymentTermsController < Api::V1::ApiController
       :trade_credit_days,
       :active
     )
-  end
-
-  def set_account
-    @account = current_user.accounts.find_by(id: params[:current_account_id])
   end
 
 end
