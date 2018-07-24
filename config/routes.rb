@@ -36,8 +36,9 @@ Rails.application.routes.draw do
       resources :payment_options, only: [:index]
       resources :payment_terms, only: [:index, :create, :show, :update, :destroy]
 
-      resources :customers, only: [:index, :create, :show, :update, :destroy]
-      resources :suppliers, only: [:index, :create, :show, :update, :destroy]
+
+      resources :customers, controller: 'companies/customers', only: [:index, :create, :show, :update, :destroy]
+      resources :suppliers, controller: 'companies/suppliers', only: [:index, :create, :show, :update, :destroy]
     end
   end
 
