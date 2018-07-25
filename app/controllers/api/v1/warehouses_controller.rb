@@ -15,15 +15,43 @@ class Api::V1::WarehousesController < Api::V1::ApiController
   end
 
   def create
-    
+    if @account.present?
+      warehouse = @account.warehouses.create(warehouse_params)
+      if warehouse.persisted?
+        render json: warehouse, status: 201
+      else
+        render json: warehouse.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def show
-    
+    if @account.present?
+      warehouse = @account.warehouses.find(params[:id])
+      if warehouse.persisted?
+        render json: warehouse, status: 201
+      else
+        render json: warehouse.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def update
-    
+    if @account.present?
+      warehouse = @account.warehouses.find(params[:id])
+      if warehouse.update(warehouse_params)
+        render json: warehouse, status: 201
+      else
+        render json: warehouse.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
+
   end
 
   def destroy
