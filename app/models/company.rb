@@ -3,4 +3,5 @@ class Company < ApplicationRecord
   scope :suppliers, -> { where(tyep: 'Supplier') }
 
   has_many :addresses
+  has_many :contacts
 end
