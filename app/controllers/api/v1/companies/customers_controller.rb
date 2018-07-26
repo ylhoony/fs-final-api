@@ -1,8 +1,8 @@
 class Api::V1::Companies::CustomersController < Api::V1::ApiController
+  before_action :set_account
 
   def index
-    binding.pry
-    
+    # binding.pry    
   end
 
   def create
@@ -21,23 +21,18 @@ class Api::V1::Companies::CustomersController < Api::V1::ApiController
     
   end
 
-
   protected
 
-  def set_customer
-    
-  end
-
-  def customer_params
+  def supplier_params
     params.require(:customer).permit(
       :account_id,
+      :type,
       :name,
       :tax_id,
       :comment,
       :warehouse_id,
       :payment_term_id,
-      :currency_id,
-      :active
+      :currency_id
     )
   end
 

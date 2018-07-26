@@ -1,9 +1,8 @@
 class Api::V1::Companies::SuppliersController < Api::V1::ApiController
+  before_action :set_account
 
   def index
-    binding.pry
-
-    
+    # binding.pry
   end
 
   def create
@@ -20,6 +19,21 @@ class Api::V1::Companies::SuppliersController < Api::V1::ApiController
 
   def destroy
     
+  end
+
+  protected
+
+  def supplier_params
+    params.require(:supplier).permit(
+      :account_id,
+      :type,
+      :name,
+      :tax_id,
+      :comment,
+      :warehouse_id,
+      :payment_term_id,
+      :currency_id
+    )
   end
 
 end
