@@ -51,7 +51,6 @@ class Api::V1::WarehousesController < Api::V1::ApiController
     else
       render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
     end
-
   end
 
   def destroy
@@ -59,10 +58,6 @@ class Api::V1::WarehousesController < Api::V1::ApiController
   end
 
   protected
-
-  def set_warehosue
-    
-  end
 
   def warehouse_params
     params.require(:warehouse).permit(
