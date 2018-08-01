@@ -8,4 +8,6 @@ class Company < ApplicationRecord
   belongs_to :payment_term
   has_many :addresses
   has_many :contacts
+
+  accepts_nested_attributes_for :addresses, :contacts, allow_destroy: true
 end
