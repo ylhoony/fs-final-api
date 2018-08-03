@@ -1,9 +1,11 @@
 class CreateProductBrands < ActiveRecord::Migration[5.2]
   def change
     create_table :product_brands do |t|
-      t.string :name
+      t.integer :account_id
+      t.string :name, null: false
+      t.boolean :active, default: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
