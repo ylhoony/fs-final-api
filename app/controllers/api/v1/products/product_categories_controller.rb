@@ -1,7 +1,7 @@
 class Api::V1::Products::ProductCategoriesController < Api::V1::ApiController
 
   def index
-
+    
   end
 
   def create
