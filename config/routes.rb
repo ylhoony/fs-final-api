@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
       resources :customers, controller: 'companies/customers', only: [:index, :create, :show, :update, :destroy]
       resources :suppliers, controller: 'companies/suppliers', only: [:index, :create, :show, :update, :destroy]
+
+      resources :product_categories, controller: 'products/product_categories', only: [:index, :create, :show, :update, :destroy]
     end
   end
 
