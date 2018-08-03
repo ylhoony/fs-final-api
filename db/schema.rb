@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_183037) do
+ActiveRecord::Schema.define(version: 2018_08_02_234734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,14 @@ ActiveRecord::Schema.define(version: 2018_07_26_183037) do
     t.integer "days", default: 0
     t.decimal "trade_credit_rate"
     t.integer "trade_credit_days"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.integer "account_id"
+    t.string "name"
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
