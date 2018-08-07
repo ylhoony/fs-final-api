@@ -10,6 +10,7 @@ class Account < ApplicationRecord
   has_many :payment_terms
   has_many :product_brands
   has_many :product_categories
+  has_many :products
   has_many :warehouses
 
   validates :name, presence: true
