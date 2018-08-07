@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
       resources :product_categories, controller: 'products/product_categories', only: [:index, :create, :show, :update, :destroy]
       resources :product_brands, controller: 'products/product_brands', only: [:index, :create, :show, :update, :destroy]
+      resources :products, controller: 'products/products', only: [:index, :create, :show, :update, :destroy]
     end
   end
-
 end
