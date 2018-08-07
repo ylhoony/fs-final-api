@@ -1,4 +1,4 @@
-class Api::V1::Products::ProductBrandsController < ApplicationController
+class Api::V1::Products::ProductBrandsController < Api::V1::ApiController
   before_action :set_account
 
   def index
