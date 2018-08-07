@@ -7,8 +7,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :sku
       t.string :name
       t.text :description
-      t.boolean :active
-      t.decimal :base_price
+      t.boolean :active, default: true
+      t.decimal :base_price, default: 0
 
       t.timestamps null: false
     end

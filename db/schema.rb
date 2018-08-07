@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(version: 2018_08_07_220212) do
     t.string "sku"
     t.string "name"
     t.text "description"
-    t.boolean "active"
-    t.decimal "base_price"
+    t.boolean "active", default: true
+    t.decimal "base_price", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
