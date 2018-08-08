@@ -69,7 +69,17 @@ class Api::V1::Products::ProductsController < Api::V1::ApiController
   protected
 
   def product_params
-    # params.require(:product).permit()
+    params.require(:product).permit(
+      :id, 
+      :account_id,
+      :product_brand_id,
+      :product_category_id,
+      :sku,
+      :name, 
+      :description,
+      :base_price,
+      :active
+    )
   end
 
 end
