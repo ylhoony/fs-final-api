@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
-  scope :customers, -> { where(tyep: 'Customer') }
-  scope :suppliers, -> { where(tyep: 'Supplier') }
+  scope :customers, -> { where(type: 'Customer') }
+  scope :suppliers, -> { where(type: 'Supplier') }
 
   belongs_to :account
   belongs_to :currency
