@@ -15,4 +15,5 @@ class Api::V1::CurrenciesController < Api::V1::ApiController
   def set_currency
     @currency = Currency.find(params[:id])
   end
+  
 end
