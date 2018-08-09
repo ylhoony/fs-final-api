@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_220212) do
+ActiveRecord::Schema.define(version: 2018_08_09_202052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,24 @@ ActiveRecord::Schema.define(version: 2018_08_07_220212) do
     t.integer "user_id"
     t.integer "account_id"
     t.boolean "subscriber", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "type"
+    t.integer "account_id"
+    t.integer "account_address_id"
+    t.integer "account_contact_id"
+    t.integer "customer_id"
+    t.integer "supplier_id"
+    t.integer "billing_address_id"
+    t.integer "shipping_address_id"
+    t.integer "warehouse_id"
+    t.integer "currency_id"
+    t.string "order_reference"
+    t.text "comment"
+    t.datetime "order_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
