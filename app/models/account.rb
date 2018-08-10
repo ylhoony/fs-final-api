@@ -12,6 +12,8 @@ class Account < ApplicationRecord
   has_many :product_categories
   has_many :products
   has_many :warehouses
+  has_many :sales_orders
+  has_many :purchase_orders
 
   validates :name, presence: true
   validates :country_id, presence: true
