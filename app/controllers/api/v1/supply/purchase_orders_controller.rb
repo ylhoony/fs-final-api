@@ -1,8 +1,17 @@
 class Api::V1::Supply::PurchaseOrdersController < Api::V1::ApiController
-
+  before_action :set_account
 
   def index
-    
+    if @account.present?
+      purchase_orders = @account.purchase_orders
+      if purchase_orders.present?
+        render json: purchase_orders, status: 200
+      else
+        render json: { purchase_orders: [] }, status: 200
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def create
@@ -14,10 +23,6 @@ class Api::V1::Supply::PurchaseOrdersController < Api::V1::ApiController
   end
 
   def update
-    
-  end
-
-  def destroy
     
   end
 
