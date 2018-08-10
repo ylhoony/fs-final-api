@@ -13,6 +13,5 @@ class Order < ApplicationRecord
 
   belongs_to :warehouse
   belongs_to :currency
-
-
+  belongs_to :payment_term
 end
