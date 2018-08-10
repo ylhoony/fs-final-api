@@ -33,6 +33,7 @@ class Api::V1::Demand::SalesOrdersController < Api::V1::ApiController
       :shipping_address_id,
       :warehouse_id,
       :currency_id,
+      :payment_term_id,
       :order_reference,
       :comment,
       :order_date
