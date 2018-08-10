@@ -42,6 +42,9 @@ Rails.application.routes.draw do
       resources :customers, controller: 'companies/customers', only: [:index, :create, :show, :update, :destroy]
       resources :suppliers, controller: 'companies/suppliers', only: [:index, :create, :show, :update, :destroy]
 
+      resources :sales_orders, controller: 'demand/sales_orders', only: [:index, :create, :show, :update]
+      resources :purchase_orders, controller: 'supply/purchase_orders', only: [:index, :create, :show, :update]
+
       resources :product_categories, controller: 'products/product_categories', only: [:index, :create, :show, :update, :destroy]
       resources :product_brands, controller: 'products/product_brands', only: [:index, :create, :show, :update, :destroy]
       resources :products, controller: 'products/products', only: [:index, :create, :show, :update, :destroy]
