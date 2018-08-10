@@ -15,7 +15,16 @@ class Api::V1::Supply::PurchaseOrdersController < Api::V1::ApiController
   end
 
   def create
-    
+    if @account.present?
+      purchase_order = @account.purchase_orders.create(purchase_order_params)
+      if purchase_order.persisted?
+        render json: purchase_order, status: 201
+      else
+        render json: purchase_order.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def show
