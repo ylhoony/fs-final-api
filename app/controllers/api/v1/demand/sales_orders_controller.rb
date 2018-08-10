@@ -1,7 +1,8 @@
 class Api::V1::Demand::SalesOrdersController < Api::V1::ApiController
+  before_action :set_account
 
   def index
-    
+
   end
 
   def create
@@ -13,10 +14,6 @@ class Api::V1::Demand::SalesOrdersController < Api::V1::ApiController
   end
 
   def update
-    
-  end
-
-  def destroy
     
   end
 
