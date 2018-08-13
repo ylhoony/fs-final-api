@@ -28,11 +28,29 @@ class Api::V1::Supply::PurchaseOrdersController < Api::V1::ApiController
   end
 
   def show
-    
+    if @account.present?
+      purchase_order = @account.purchase_orders.find(params[:id])
+      if purchase_order.persisted?
+        render json: purchase_order, status: 201
+      else
+        render json: purchase_order.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   def update
-    
+    if @account.present?
+      purchase_order = @account.purchase_orders.find(params[:id])
+      if purchase_order.update(purchase_order_params)
+        render json: purchase_order, status: 201
+      else
+        render json: purchase_order.errors, status: 400
+      end
+    else
+      render render json: { errors: [ message: "Access Denied" ] }, status: :unauthorized
+    end
   end
 
   protected
