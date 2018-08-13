@@ -14,4 +14,6 @@ class Order < ApplicationRecord
   belongs_to :warehouse
   belongs_to :currency
   belongs_to :payment_term
+
+  has_many :order_lines
 end
