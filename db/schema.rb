@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_233947) do
   end
 
   create_table "order_lines", force: :cascade do |t|
+    t.integer "order_id"
     t.integer "product_id"
     t.text "comment"
     t.integer "quantity"
