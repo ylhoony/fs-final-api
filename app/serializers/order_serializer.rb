@@ -12,5 +12,7 @@ class OrderSerializer < ActiveModel::Serializer
   belongs_to :currency
   belongs_to :payment_term
 
+  has_many :order_lines
+
   attributes :id, :type, :order_reference, :comment, :order_date
 end
