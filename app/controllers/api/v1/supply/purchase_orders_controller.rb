@@ -69,7 +69,16 @@ class Api::V1::Supply::PurchaseOrdersController < Api::V1::ApiController
       :payment_term_id,
       :order_reference,
       :comment,
-      :order_date
+      :order_date,
+      order_lines_attributes: [
+        :id, 
+        :order_id,
+        :product_id,
+        :comment,
+        :quantity,
+        :unit_price,
+        :_destroy
+      ]
     )
   end
 
