@@ -3,7 +3,7 @@ class Api::V1::Products::ProductCategoriesController < Api::V1::ApiController
 
   def index
     if @account.present?
-      product_categories = @account.product_categories
+      product_categories = @account.product_categories.order(name: :asc)
       if product_categories.present?
         render json: product_categories, status: 200
       else
@@ -69,7 +69,12 @@ class Api::V1::Products::ProductCategoriesController < Api::V1::ApiController
   protected
 
   def product_category_params
-    params.require(:product_category).permit(:account_id, :name, :active)
+    params.require(:product_category).permit(
+      :account_id,
+      :name, 
+      :active,
+      :likecount
+    )
   end
 
 end
